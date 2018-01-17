@@ -1,0 +1,8 @@
+a)
+Vi mangler en krøllparantes i slutten av filen, slik at kompileren ikke
+forstår at klassen er ferdig.
+
+b)
+Jens er skrevet med stor bokstav, mens variabelen er skrevet med liten.
+
+c)
