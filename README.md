@@ -1,1 +1,1 @@
-Obligatoriske oppgaver og trixløsninger til faget IN1000
+Obligatoriske oppgaver og trixløsninger til faget IN1010
