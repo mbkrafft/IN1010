@@ -1,0 +1,3 @@
+Metoden variabelBytte endrer rekkefølgen på variablene den får inn som
+parametre, men returnerer ingen verdier. Dessuten, så tilordnes aldri variablene
+x og y noen ny verdi når man bruker de som paramtre til en metode
