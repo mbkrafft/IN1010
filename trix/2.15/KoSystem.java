@@ -3,31 +3,41 @@ import java.util.ArrayList;
 public class KoSystem{
 
     KoLapp lapp;
-    ArrayList<KoLapp> koLappListe = new ArrayList<KoLapp>;
-    int teller = 0;
+    ArrayList<KoLapp> koLappListe = new ArrayList<KoLapp>();
+    int teller = 1;
+
+    public KoSystem() {
+
+    }
 
     //Lager et nytt objekt av KoLapp, printer ut informasjon om den og legger den til i listen over koLapper.
     public void trekkKoLapp(){
 
-        this.lapp = new KoLapp;
-
-        System.out.println(this.lapp.hentNummer());
-
-        koLappListe[teller] = this.lapp;
+        this.lapp = new KoLapp(teller);
+        System.out.println("Kønummer: " + this.lapp.hentNummer());
+        koLappListe.add(this.lapp);
         teller ++;
     }
+
 
     //Henter ut, printer ut informasjon og fjerner den forste kolappen i lista. Gir feilmelding dersom ingen kunder staar i ko.
     public void betjenKunde(){
 
-        
+        try {
+            KoLapp kundeLapp = koLappListe.remove(0);
+            System.out.println("Kunde med billetnummer " +
+            kundeLapp.hentNummer() + " er betjent.");
+        }
+        catch (IndexOutOfBoundsException e) {
+            System.out.println("Ingen flere i kø");
+        }
     }
 
 
     //Returnerer antall kunder som er i ko.
     public int antKunder(){
 
-        int antall;
+        int antall = 0;
 
         for (KoLapp lapp : koLappListe) {
             if (lapp != null) {
@@ -35,7 +45,13 @@ public class KoSystem{
             }
         }
 
+        System.out.println("Det står " + antall + " personer i kø.");
+
         return antall;
+
+
+        //evt?
+        // return koLappListe.size();
     }
 
 
@@ -43,7 +59,7 @@ public class KoSystem{
     public void printKunderIKo(){
 
         for (KoLapp lapp : koLappListe) {
-            System.out.println(lapp.hentNummer);
+            System.out.println(lapp.hentNummer());
         }
     }
 
