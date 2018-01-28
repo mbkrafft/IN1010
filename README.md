@@ -1,1 +1,1 @@
-Obligatoriske oppgaver og trixløsninger til faget IN1010
+Trixløsninger og notater til faget IN1010
