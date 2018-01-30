@@ -6,7 +6,7 @@ public class KoProgram {
 
     public static void main(String[] args) {
 
-        KoSystem system = new KoSystem();
+        KoSystem meny = new KoSystem();
         boolean fortsett = true;
 
         while (fortsett) {
@@ -27,14 +27,14 @@ public class KoProgram {
 
             switch (tall) {
                 case 1:
-                    system.trekkKoLapp();
-                    system.antKunder();
+                    meny.trekkKoLapp();
+                    meny.antKunder();
                     break;
                 case 2:
-                    system.betjenKunde();
+                    meny.betjenKunde();
                     break;
                 case 3:
-                    system.antKunder();
+                    meny.antKunder();
                     break;
                 case 4:
                     System.out.println("Du avslutter programmet.");

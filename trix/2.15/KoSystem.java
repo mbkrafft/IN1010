@@ -37,21 +37,8 @@ public class KoSystem{
     //Returnerer antall kunder som er i ko.
     public int antKunder(){
 
-        int antall = 0;
-
-        for (KoLapp lapp : koLappListe) {
-            if (lapp != null) {
-                antall ++;
-            }
-        }
-
-        System.out.println("Det står " + antall + " personer i kø.");
-
-        return antall;
-
-
-        //evt?
-        // return koLappListe.size();
+        System.out.println("Det står " + koLappListe.size() + " personer i kø.");
+        return koLappListe.size();
     }
 
 
