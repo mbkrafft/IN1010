@@ -1,0 +1,7 @@
+
+
+
+interface Rovdyr {
+
+    void gaaPaaJakt();
+}

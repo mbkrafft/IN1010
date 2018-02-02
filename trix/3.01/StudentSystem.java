@@ -14,14 +14,15 @@ public class StudentSystem {
     // liste over alle studenter som tar fag
     ArrayList<Student> alleStudenter = new ArrayList<Student>();
 
+    Scanner tastatur = new Scanner( System.in);
+
 
     // validerer at man kan opprette en scanner over filen man selv har oppgitt
     private Scanner skrivInnFilNavn() {
 
         System.out.print("Skriv inn filnavn: ");
         try {
-            Scanner scanInn = new Scanner(System.in);
-            String filnavn = scanInn.next();
+            String filnavn = tastatur.nextLine();
             File fil = new File(filnavn);
             return new Scanner(fil);
         }
@@ -313,8 +314,7 @@ public class StudentSystem {
     private int sporOmTall() {
         int valg;
         System.out.print("Du taster: ");
-        Scanner tast = new Scanner(System.in);
-        valg = tast.nextInt();
+        valg = tastatur.nextInt();
         return valg;
     }
 
@@ -324,8 +324,7 @@ public class StudentSystem {
 
         System.out.print("Hvilken student: ");
 
-        Scanner navnInn = new Scanner(System.in);
-        String navn = navnInn.nextLine();
+        String navn = tastatur.nextLine();
 
         // sjekker om riktig navn
         for (Student s : alleStudenter) {
@@ -353,9 +352,8 @@ public class StudentSystem {
             skrivStudentSystemMeny();
 
             try {
-                Scanner tallInn = new Scanner(System.in);
                 System.out.print("Skriv inn valg: ");
-                valg = tallInn.nextInt();
+                valg = tastatur.nextInt();
             }
             catch (Exception e) {
                 valg = -1;
@@ -392,9 +390,8 @@ public class StudentSystem {
                 case 7:
                     Boolean leggTilStudent = true;
                     System.out.println("Hva heter studenten?");
-                    Scanner navnInn = new Scanner(System.in);
                     System.out.print("Skriv inn navn: ");
-                    String navn = navnInn.nextLine();
+                    String navn = tastatur.nextLine();
                     for (Student s : alleStudenter) {
                         if (navn.equals(s.hentNavn())) {
                             System.out.println("Dette navnet ligger allerede"
@@ -411,9 +408,8 @@ public class StudentSystem {
                 case 8:
                     Boolean leggTilFag = true;
                     System.out.println("Hva er fagkoden?");
-                    Scanner fagkodeInn = new Scanner(System.in);
                     System.out.print("Skriv inn fagkode: ");
-                    String fagkode = fagkodeInn.nextLine();
+                    String fagkode = tastatur.nextLine();
                     for (Fag f : oversikt.keySet()) {
                         if (fagkode.equals(f.hentFagkode())) {
                             System.out.println("Denne fagkoden ligger" +
@@ -452,9 +448,8 @@ public class StudentSystem {
     // skriver ut all informasjon om både studenter og fag til valgfri fil
     public void skrivTilFil() throws Exception {
 
-        Scanner scan = new Scanner(System.in);
         System.out.print("Skriv filnavnet du vil skrive til: ");
-        String filnavn = scan.nextLine();
+        String filnavn = tastatur.nextLine();
 
         PrintWriter writer = new PrintWriter(filnavn, "UTF-8");
         for (Fag f : oversikt.keySet()) {
